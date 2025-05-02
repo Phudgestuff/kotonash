@@ -7,3 +7,4 @@ Kotonash is a card game that my friend created in a D&D session. This is an effo
 - Unzip it
 - Run the command `npm install` in the terminal
 - Run `node app.js` within the Kotonash root folder
+- Open http://localhost:3000 in any web browser
