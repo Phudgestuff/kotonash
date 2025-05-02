@@ -7,7 +7,7 @@
 - Download the zip file
 - Unzip it
 - Run the command `npm install` in the terminal
-- Run `node app.js` within the Kotonash root folder
+- Run `node app.js` within the *Kotonash!* root folder
 - Open http://localhost:3000 in any web browser
 
 ## Requirements
