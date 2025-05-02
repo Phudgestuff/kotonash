@@ -1,9 +1,8 @@
 const express = require('express');
 const Database = require('better-sqlite3');
-const dbFunc = require('dbFunctions.js');
+const dbFunc = require('./dbFunctions.js');
 
 const app = express();
-const db = new Database('accounts.sqlite')
 
 
 // set up server

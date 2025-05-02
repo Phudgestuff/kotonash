@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'enchantedland';
+    src: url('./assets/fonts/Enchanted\ Land.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: src();
+    color: white;
+    font-family: 'enchantedland', sans-serif;
+    background-image: url('assets/otherImages/background.png');
+    background-color: cover;
+    background-position: centre;
+}
+
+.title {
+    position: absolute;
+    text-align: center;
+    font-size: 100px;
+    pointer-events: none;
+    transform: translateX(-50%);
+    left: 50%;
+    top: -50px;
+}
+
+.title .titleText {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.title .titleImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+    z-index: 0;
+    pointer-events: none;
+}

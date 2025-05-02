@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kotonash</title>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Kotonash!</title>
+    <link rel="icon" href="assets/otherImages/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <link rel="stylesheet" type="text/css" href="/index.css">
 </head>
 <body>
-    <h1>Kotonash Login</h1>
+    <div class="title">
+        <img class="titleImage" src="./assets/otherImages/favicon.png">
+        <h1 class="titleText">Kotonash!</h1>
+    </div>
     <form action="/login" method="post">
-        <div userdiv>
-            <t>Username</t>
-            <input type="text" name="user">
-        </div>
-        <div passdiv>
-            <t>Password</t>
-            <input type="password" name="pass">
-        </div>
+        <t id="username">Username</t>
+        <input type="text" name="user">
+        <t>Password</t>
+        <input type="password" name="pass">
         <button type="submit">Submit</button>
     </form>
 </body>
