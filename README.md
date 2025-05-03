@@ -11,8 +11,12 @@
 - Open http://localhost:3000 in any web browser
 
 ## Requirements
+### Software
 - Node.js
 - npm
-- better-sqlite3 (installed with `npm install`)
-- body-parser (installed with `npm install`)
-- express.js (installed with `npm install`)
+### npm modules used
+- better-sqlite3
+- body-parser
+- express.js
+- cookie-parser
+- obscenity
