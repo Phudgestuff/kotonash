@@ -7,18 +7,39 @@
     <link rel="stylesheet" type="text/css" href="/index.css">
 </head>
 <body>
+    <!-- Kotonash! logo at top -->
     <div class="title">
         <img class="titleImage" src="./assets/otherImages/favicon.png">
         <h1 class="titleText">Kotonash!</h1>
     </div>
-    <form action="/login" method="post">
+
+    <!-- Login form -->
+    <form action="/auth/login" method="post">
         <t id="username">Username</t>
         <input id="usernameBox" class="inputBox" type="text" name="user">
         <t id="password">Password</t>
         <input id="passwordBox" class="inputBox" type="password" name="pass">
         <button type="submit" class="button" id="submit">Log in</button>
     </form>
+
+    <!-- Link to account creation page -->
     <a href="accountCreate.html" id="accReg">Don't have an account? Register one here.</a>
+
+    <!-- Footer crediting us -->
     <t id="createdBy">Created by Phudgestuff (Website creation), CarriageArtist (Art),  CapybaraEmperor (Concept)</t>
+
+    <!-- Error message (and other messages) -->
+    <div id="errorMessage"></div>
+    <div id="otherMessage"></div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const error = params.get('error');
+        const msg = params.get('msg');
+        if (error) {
+            document.getElementById('errorMessage').textContent = decodeURIComponent(error);
+        } else if (msg) {
+            document.getElementById('otherMessage').textContent = decodeURIComponent(msg);
+        }
+    </script>
 </body>
 </html>

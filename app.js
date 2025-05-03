@@ -1,9 +1,5 @@
 const express = require('express');
-const Database = require('better-sqlite3');
-const dbFunc = require('./dbFunctions.js');
-
 const app = express();
-
 
 // set up server
 const port = 3000;
@@ -20,16 +16,20 @@ app.get('/', (req, res) => {
     res.send(messages.home);
 });
 
+// cookie parser
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 // requests
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// /test
-app.post('/login', (req, res) => {
-    console.log(req.body.user);
-    console.log(req.body.pass);
-    res.send('logged in');
-});
+// login
+const login = require('./routes/login.js');
+app.use('/auth', login);
+// register
+const register = require('./routes/register.js');
+app.use('/auth', register);
 
 // Other cases
 // 404

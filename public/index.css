@@ -72,3 +72,23 @@ body {
     font-size: 40px;
     width: 100%;
 }
+
+#errorMessage {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 325px;
+    font-size: 30px;
+    color: rgb(122, 0, 0);
+    text-align: center;
+}
+
+#otherMessage {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 325px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}

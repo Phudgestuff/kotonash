@@ -9,7 +9,9 @@ db.prepare(`CREATE TABLE IF NOT EXISTS
     password TEXT);
 `).run();
 
+// check if username and password are in db
 function checkLogin(username, password) {
+    // hash the password for securityoo
     let passHash = crypto.createHash('sha256').update(password).digest('hex');
     resultID = db.prepare(`SELECT id FROM users
         WHERE username = ? AND password = ?`).get(username, passHash);
@@ -20,14 +22,18 @@ function checkLogin(username, password) {
     }
 }
 
+// add username and password to db
 function createAccount(username, password) {
     try {
+        // hash password for security
         let passHash = crypto.createHash('sha256').update(password).digest('hex');
+        // insert into db
         db.prepare(`INSERT INTO users (username, password)
             values(?, ?);`
         ).run(username, passHash);
         return true;
     } catch {
+        // if it fails
         return false;
     }
 }

@@ -12,6 +12,8 @@
   "dependencies": {
     "better-sqlite3": "^11.9.1",
     "body-parser": "^2.2.0",
-    "express": "^5.1.0"
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "obscenity": "^0.4.3"
   }
 }
