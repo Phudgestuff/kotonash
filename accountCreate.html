@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>Kotonash!</title>
+    <link rel="icon" href="assets/otherImages/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <link rel="stylesheet" type="text/css" href="/index.css">
+    <link rel="stylesheet" type="text/css" href="/accountCreate.css">
+</head>
+<body>
+<!-- Kotonash! logo at top -->
+<img class="title" src="assets/otherImages/kotonash.png">
+
+    <!-- Login form -->
+    <form action="/auth/register" method="post">
+        <t id="username">Username</t>
+        <input id="usernameBox" class="inputBox" type="text" name="user">
+        <t id="password">Password</t>
+        <input id="passwordBox" class="inputBox" type="password" name="pass">
+        <button type="submit" class="button" id="submit">Register</button>
+    </form>
+
+    <!-- Error message -->
+    <div id="errorMessage"></div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const error = params.get('error');
+        if (error) {
+            document.getElementById('errorMessage').textContent = decodeURIComponent(error);
+        }
+    </script>
+</body>
