@@ -1,5 +1,5 @@
 # ***Kotonash!***
-![Logo](public/assets/otherImages/favicon.png)
+![Logo](public/assets/otherImages/kotonash.png)
 ## What is *Kotonash!*?
 *Kotonash!* is a card game that my friend (Capybara_Emperor) created in a D&D session. This is an effort to bring it to life with as a web-game.
 
