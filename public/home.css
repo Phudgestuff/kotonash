@@ -1,0 +1,37 @@
+.title {
+    height: 100px;
+    left: 20px;
+    transform: none;
+}
+
+#usernameLabel {
+    position: absolute;
+    left: 230px;
+    top: 10px;
+    font-size: 50px;
+    pointer-events: none;
+}
+
+#currencyLabel {
+    position: absolute;
+    left: 230px;
+    top: 50px;
+    font-size: 50px;
+    pointer-events: none;
+}
+
+#username {
+    position: absolute;
+    left: 380px;
+    top: 10px;
+    font-size: 50px;
+    pointer-events: none;
+}
+
+#currency {
+    position: absolute;
+    left: 380px;
+    top: 50px;
+    font-size: 50px;
+    pointer-events: none;
+}

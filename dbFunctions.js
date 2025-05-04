@@ -6,7 +6,8 @@ const db = new Database('account.sqlite');
 db.prepare(`CREATE TABLE IF NOT EXISTS
     users (id INTEGER PRIMARY KEY,
     username TEXT,
-    password TEXT);
+    password TEXT,
+    balance INTEGER);
 `).run();
 
 // check if username and password are in db
@@ -28,8 +29,9 @@ function createAccount(username, password) {
         // hash password for security
         let passHash = crypto.createHash('sha256').update(password).digest('hex');
         // insert into db
-        db.prepare(`INSERT INTO users (username, password)
-            values(?, ?);`
+        // default balance: 0
+        db.prepare(`INSERT INTO users (username, password, balance)
+            values(?, ?, 0);`
         ).run(username, passHash);
         return true;
     } catch {

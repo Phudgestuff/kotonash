@@ -26,7 +26,10 @@ router.post('/register', (req, res) => {
     // no password
     } else if (req.body.pass === "") {
         res.redirect(`/accountCreate.html?error=${encodeURI('No password provided.')}`);
-    // already exists
+    // too long
+    } else if (req.body.user.length > 20) {
+        res.redirect(`/accountCreate.html?error=${encodeURI('This username is too long.')}`);  
+    // already exists          
     } else if (db.checkLogin(req.body.user.toLowerCase(), req.body.pass.toLowerCase()) !== -1) {
         res.redirect(`/accountCreate.html?error=${encodeURI('This username is taken.')}`);
     // if is appropriate
