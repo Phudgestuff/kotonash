@@ -40,7 +40,15 @@ function createAccount(username, password) {
     }
 }
 
+// get info via userID
+function getInfo(id) {
+    const info = db.prepare(`SELECT username, balance FROM users
+        WHERE id = ?`).get(id);
+    return { username: info.username, balance: info.balance };
+}
+
 module.exports = {
     checkLogin,
-    createAccount
+    createAccount,
+    getInfo
 };

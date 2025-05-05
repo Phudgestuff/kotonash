@@ -11,7 +11,7 @@ const matcher = new RegExpMatcher({
 function validate(str) {
     strl = str.toLowerCase();
     // check if alphanumeric (with _ and . included) and has no profanity
-    if (/^[a-z._]+$/i.test(strl) && !matcher.hasMatch(strl)) {
+    if (/^[a-z._.0-9]+$/i.test(strl) && !matcher.hasMatch(strl)) {
         return true;
     } else {
         return false;
@@ -30,12 +30,12 @@ router.post('/register', (req, res) => {
     } else if (req.body.user.length > 20) {
         res.redirect(`/accountCreate.html?error=${encodeURI('This username is too long.')}`);  
     // already exists          
-    } else if (db.checkLogin(req.body.user.toLowerCase(), req.body.pass.toLowerCase()) !== -1) {
+    } else if (db.checkLogin(req.body.user, req.body.pass) !== -1) {
         res.redirect(`/accountCreate.html?error=${encodeURI('This username is taken.')}`);
     // if is appropriate
     } else {
         // add to db and tell user, send back to login page
-        db.createAccount(req.body.user.toLowerCase(), req.body.pass.toLowerCase());
+        db.createAccount(req.body.user, req.body.pass);
         res.redirect(`/index.html?msg=${encodeURI('Kotonash! account created. Please log in to your new account!')}`);
     }
 });

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 // set up server
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);
 });
@@ -30,6 +30,9 @@ app.use('/auth', login);
 // register
 const register = require('./routes/register.js');
 app.use('/auth', register);
+// getInfo
+const getInfo = require('./routes/getinfo.js');
+app.use('/info', getInfo);
 
 // Other cases
 // 404

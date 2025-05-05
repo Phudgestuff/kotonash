@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Kotonash!</title>
-    <link rel="icon" href="assets/otherImages/favicon.png">
+    <link rel="icon" href="assets/otherImages/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/global.css">
     <link rel="stylesheet" type="text/css" href="/home.css">
 </head>
@@ -15,4 +15,15 @@
         <t id="currencyLabel">Balance:</t>
         <t id="currency">...</t>
     </div>
+    <script>
+        fetch('/info/getInfo')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("username").textContent = data.username;
+                document.getElementById("currency").textContent = data.balance;
+            })
+            .catch(err => {
+                console.error('Fetch error: ', err);
+            })
+    </script>
 </body>

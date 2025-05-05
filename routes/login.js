@@ -4,7 +4,7 @@ const db = require('../dbFunctions.js');
 
 // /login
 router.post('/login', (req, res) => {
-    const id = db.checkLogin(req.body.user.toLowerCase(), req.body.pass.toLowerCase());
+    const id = db.checkLogin(req.body.user, req.body.pass);
     cookieHalfLife = 1.5 // In days; Put as half life because I think it's funny
     if (id !== -1) {
         res.cookie('userID', id, {
